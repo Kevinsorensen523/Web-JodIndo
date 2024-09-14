@@ -5,6 +5,7 @@ export default {
         "./storage/framework/views/*.php",
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.jsx",
+        "./node_modules/@chakra-ui/react/dist/**/*.js",
     ],
     theme: {
         extend: {},
