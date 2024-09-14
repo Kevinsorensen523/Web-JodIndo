@@ -11,6 +11,14 @@ const theme = extendTheme({
                         bg: "#E6D8C8",
                     },
                 },
+                secondButton: {
+                    bg: "#FFFFFF",
+                    color: "#EF9525",
+                    border: "1px solid #EF9525",
+                    _hover: {
+                        bg: "#E6D8C8",
+                    },
+                },
             },
         },
     },

@@ -13,6 +13,7 @@ import Card from "../Components/Card";
 import Button from "../Components/Button";
 import CardGrid from "../Components/CardGrid";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -40,15 +41,18 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <Box p={4}>
-                <Text fontSize="xl" mb={4}>
-                    Welcome to the Home Page!
+            <Box p={4} pt={32}>
+                <Text>Temukan Pekerja & Dapatkan Pekerjaan</Text>
+                <Text>hanya dalam Satu Pintu!</Text>
+                <Text>
+                    Memberdayakan bisnis dengan pekerja gigih yang berkualitas
+                    tinggi, terpercaya dan dapat diandalkan dengan karir yang
+                    fleksibel untuk membuka
                 </Text>
-
-                {/* Search Bar */}
-
-                <Button>Click Me</Button>
-                <div className="p-4"></div>
+                <Text>
+                    peluang mereka dan membangun talenta hebat untuk pertumbuhan
+                    gig economy
+                </Text>
                 <CardGrid cards={cards} />
                 <Box mb={6} textAlign="center">
                     <Input
@@ -100,6 +104,7 @@ const Home = () => {
                     </Accordion>
                 </Box>
             </Box>
+            <Footer />
         </>
     );
 };

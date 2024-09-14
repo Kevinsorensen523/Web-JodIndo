@@ -14,6 +14,7 @@ import {
     useDisclosure,
     useBreakpointValue,
 } from "@chakra-ui/react";
+import Button from "./Button";
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
@@ -27,6 +28,12 @@ const Navbar = () => {
             shadow="md"
             borderBottom="1px"
             borderColor="gray.200"
+            position="fixed"
+            top={0}
+            left={0}
+            right={0}
+            width="100%"
+            zIndex="docked"
         >
             <Flex
                 align="center"
@@ -73,7 +80,7 @@ const Navbar = () => {
 
                 {/* Menu Section */}
                 <Flex align="center" ml={10} spacing={8} display={display}>
-                    <Text mx={4} cursor="pointer">
+                    <Text mx={4} cursor="pointer" fontWeight="bold">
                         Beranda
                     </Text>
                     <Text mx={4} cursor="pointer">
@@ -89,10 +96,10 @@ const Navbar = () => {
 
                 {/* Button Section */}
                 <Flex display={display}>
-                    <ChakraButton variant="outline" mr={4}>
+                    <ChakraButton variant="secondButton" mr={4}>
                         Button 1
                     </ChakraButton>
-                    <ChakraButton colorScheme="teal">Button 2</ChakraButton>
+                    <Button>Button 2</Button>
                 </Flex>
             </Flex>
 
@@ -122,9 +129,7 @@ const Navbar = () => {
                             <ChakraButton variant="outline" mb={2}>
                                 Button 1
                             </ChakraButton>
-                            <ChakraButton colorScheme="teal">
-                                Button 2
-                            </ChakraButton>
+                            <Button>Button 2</Button>
                         </Flex>
                     </Flex>
                 </Box>
