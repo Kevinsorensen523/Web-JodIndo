@@ -28,12 +28,14 @@ const Navbar = () => {
             shadow="md"
             borderBottom="1px"
             borderColor="gray.200"
+            boxShadow="0px 5px 10px rgba(240, 149, 37, 0.5)"
             position="fixed"
             top={0}
             left={0}
             right={0}
             width="100%"
             zIndex="docked"
+            borderRadius="xl"
         >
             <Flex
                 align="center"
@@ -80,7 +82,7 @@ const Navbar = () => {
 
                 {/* Menu Section */}
                 <Flex align="center" ml={10} spacing={8} display={display}>
-                    <Text mx={4} cursor="pointer" fontWeight="bold">
+                    <Text mx={4} cursor="pointer">
                         Beranda
                     </Text>
                     <Text mx={4} cursor="pointer">

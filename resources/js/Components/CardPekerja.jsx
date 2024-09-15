@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Image, Text, Stack } from "@chakra-ui/react";
 
-const Card = ({ title, description, imageUrl, width, height }) => {
+const CardPekerja = ({ title, description, imageUrl, width, height }) => {
     return (
         <Box
             borderWidth="1px"
@@ -13,15 +13,6 @@ const Card = ({ title, description, imageUrl, width, height }) => {
             w="full"
             mx="auto" // Center the card horizontally
         >
-            <Text
-                fontWeight="bold"
-                fontSize="2xl"
-                color="#EF9525"
-                textAlign="center"
-                mb={4}
-            >
-                {title}
-            </Text>
             <Image
                 src={imageUrl}
                 alt={title}
@@ -32,6 +23,15 @@ const Card = ({ title, description, imageUrl, width, height }) => {
                 mx="auto" // Center the image within the card
                 mb={6}
             />
+            <Text
+                fontWeight="bold"
+                fontSize="2xl"
+                color="#EF9525"
+                textAlign="center"
+                mb={4}
+            >
+                {title}
+            </Text>
             <Stack spacing={6}>
                 <Text color="#151D29" textAlign="center" fontSize="lg">
                     {description}
@@ -41,4 +41,4 @@ const Card = ({ title, description, imageUrl, width, height }) => {
     );
 };
 
-export default Card;
+export default CardPekerja;

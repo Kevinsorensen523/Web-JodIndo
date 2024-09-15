@@ -15,12 +15,12 @@ const Footer = () => {
 
     return (
         <Box
-            bg="#EF9525" // Set background color
+            bg="#EF9525"
             color="white"
             py={8}
             px={4}
             borderColor="gray.700"
-            borderRadius="lg" // Add rounded corners
+            borderRadius="xl"
         >
             <Flex
                 direction={display}

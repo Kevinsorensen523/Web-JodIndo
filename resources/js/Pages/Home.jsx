@@ -8,12 +8,26 @@ import {
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
+    Image,
+    IconButton,
+    Flex,
 } from "@chakra-ui/react";
 import Card from "../Components/Card";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import Button from "../Components/Button";
 import CardGrid from "../Components/CardGrid";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import Home1 from "./../../../public/images/home1.png";
+import Card1 from "./../../../public/images/card1.png";
+import Card2 from "./../../../public/images/card2.png";
+import CardPekerja1 from "./../../../public/images/cardPekerja1.png";
+import CardPekerja2 from "./../../../public/images/cardPekerja2.png";
+import CardPekerja3 from "./../../../public/images/cardPekerja3.png";
+import CardPekerja4 from "./../../../public/images/cardPekerja4.png";
+import CardPekerja5 from "./../../../public/images/cardPekerja5.png";
+import CardPekerja6 from "./../../../public/images/cardPekerja6.png";
+import CardGridPekerja from "../Components/CardGridPekerja";
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -25,47 +39,213 @@ const Home = () => {
 
     const cards = [
         {
-            title: "Card 1",
+            title: "Temukan Pekerja",
             description:
-                "Description for Card 1 Description for Card 1 Description for Card 1 Description for Card 1 Description for Card 1 Card 1 Description for Card 1 Card 1 Description for Card 1 ",
-            imageUrl: "https://via.placeholder.com/200",
+                "Temukan pekerja yang Anda inginkan menggunakan produk Kami hanya dengan memosting pekerjaan!",
+            imageUrl: Card1,
+            width: "1000px",
+            height: "250px",
         },
         {
-            title: "Card 2",
-            description: "Description for Card 2",
-            imageUrl: "https://via.placeholder.com/200",
+            title: "Pencari Kerja",
+            description:
+                "Cari pekerjaan paruh waktu impianmu melalui Aplikasi JobsOnDemand di Google Play Store dan App Store!",
+            imageUrl: Card2,
+            width: "300px",
+            height: "300px",
         },
-        // Tambahkan lebih banyak card sesuai kebutuhan
+    ];
+
+    const cardsPekerja = [
+        {
+            title: "Kerja Fleksibel",
+            description:
+                "Bekerja dengan cara Kamu kapan saja dan di mana saja tanpa memandang apa pun.",
+            imageUrl: CardPekerja1,
+            width: "300px",
+            height: "300px",
+        },
+        {
+            title: "Banyak Dibutuhkan",
+            description:
+                "Ratusan perusahaan dari berbagai negara telah mempercayai Kami.",
+            imageUrl: CardPekerja2,
+            width: "300px",
+            height: "300px",
+        },
+        {
+            title: "Dapatkan Hadiah",
+            description:
+                "Dapatkan hadiah untuk menyelesaikan setiap pekerjaan yang Anda Kerjakan.",
+            imageUrl: CardPekerja3,
+            width: "300px",
+            height: "300px",
+        },
+    ];
+
+    const cardsPemberiKerja = [
+        {
+            title: "Kendali Penuh Pekerja",
+            description:
+                "Jod memungkinkan Kamu untuk mengakses kumpulan talenta dari pekerja terverfikasi. Kami percaya pada kualitas yang diberikan dalam jumlah banyak.",
+            imageUrl: CardPekerja4,
+            width: "300px",
+            height: "300px",
+        },
+        {
+            title: "Kontrol Biaya Pekerja",
+            description:
+                "Tidak ada pengisian ulang minimum yang diperlukan. Posting sebanyak mungkin pekerjaan dan hanya ditagih per shift yang diselesaikan.",
+            imageUrl: CardPekerja5,
+            width: "300px",
+            height: "300px",
+        },
+        {
+            title: "Kemudahan Administratif",
+            description:
+                "Lewati proses yang membosankan dan manual. Melalui layanan pekerjaan terkelola Jod, fungsi-fungsi ini dapat dilakukan dalam satu platform.",
+            imageUrl: CardPekerja6,
+            width: "300px",
+            height: "300px",
+        },
     ];
 
     return (
         <>
             <Navbar />
             <Box p={4} pt={32}>
-                <Text>Temukan Pekerja & Dapatkan Pekerjaan</Text>
-                <Text>hanya dalam Satu Pintu!</Text>
-                <Text>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                >
+                    Temukan Pekerja & Dapatkan Pekerjaan
+                </Text>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mb={4}
+                >
+                    hanya dalam{" "}
+                    <Text as="span" color="#324562">
+                        Satu Pintu!
+                    </Text>
+                </Text>
+
+                <Text color="#151D29" textAlign="center" fontSize="lg">
                     Memberdayakan bisnis dengan pekerja gigih yang berkualitas
                     tinggi, terpercaya dan dapat diandalkan dengan karir yang
                     fleksibel untuk membuka
                 </Text>
-                <Text>
+                <Text color="#151D29" textAlign="center" fontSize="lg">
                     peluang mereka dan membangun talenta hebat untuk pertumbuhan
                     gig economy
                 </Text>
-                <CardGrid cards={cards} />
-                <Box mb={6} textAlign="center">
-                    <Input
-                        placeholder="Search..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        maxW="md"
-                        mb={2}
+                <Image
+                    src={Home1}
+                    borderRadius="md"
+                    objectFit="cover"
+                    w="300px"
+                    h="300px"
+                    mx="auto"
+                    mt={8}
+                    mb={16}
+                />
+                <Flex justifyContent="center">
+                    <IconButton
+                        icon={<ChevronDownIcon />}
+                        aria-label="Arrow Down"
+                        color="white"
+                        border="2px solid #EF9525"
+                        background="#EF9525"
+                        _hover={{ background: "#EF9525", color: "white" }}
+                        variant="outline"
+                        mb={10}
                     />
-                    <Button onClick={handleSearch} colorScheme="teal">
-                        Search
-                    </Button>
-                </Box>
+                </Flex>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                >
+                    Memberikan Produk Berkualitas
+                </Text>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#324562"
+                    textAlign="center"
+                >
+                    hanya untukmu!
+                </Text>
+                <CardGrid cards={cards} />
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mt={10}
+                    mb={4}
+                >
+                    Kami{" "}
+                    <Text as="span" color="#324562">
+                        Lebih{" "}
+                    </Text>
+                    dari yang lain!
+                </Text>
+                <Text
+                    fontWeight="bold"
+                    fontSize="xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mt={4}
+                    mb={4}
+                >
+                    Untuk{" "}
+                    <Text as="span" color="#324562">
+                        Pekerja
+                    </Text>
+                </Text>
+                <CardGridPekerja cards={cardsPekerja} />
+                <Text
+                    fontWeight="bold"
+                    fontSize="xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mt={4}
+                    mb={4}
+                >
+                    Untuk{" "}
+                    <Text as="span" color="#324562">
+                        Pemberi Kerja
+                    </Text>
+                </Text>
+                <CardGridPekerja cards={cardsPemberiKerja} />
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mt={16}
+                >
+                    Ada{" "}
+                    <Text as="span" color="#324562">
+                        Pertanyaan?
+                    </Text>
+                </Text>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mb={8}
+                >
+                    Kami Siap Membantu!
+                </Text>
                 {/* FAQ Section */}
                 <Box mt={8}>
                     <Text fontSize="2xl" mb={4}>
@@ -100,9 +280,59 @@ const Home = () => {
                                 support@example.com.
                             </AccordionPanel>
                         </AccordionItem>
-                        {/* Tambahkan lebih banyak item FAQ sesuai kebutuhan */}
+                        <AccordionItem>
+                            <h2>
+                                <AccordionButton>
+                                    <Box flex="1" textAlign="left">
+                                        How can I contact support?
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                You can contact support by emailing us at
+                                support@example.com.
+                            </AccordionPanel>
+                        </AccordionItem>
                     </Accordion>
                 </Box>
+                <Box display="flex" justifyContent="center" mt={10}>
+                    <Button>Pertanyaan Lainnya</Button>
+                </Box>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mt={16}
+                >
+                    Ada{" "}
+                    <Text as="span" color="#324562">
+                        Pertanyaan?
+                    </Text>
+                </Text>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mb={8}
+                >
+                    Kami Siap Membantu!
+                </Text>
+
+                {/* <Box mb={6} textAlign="center">
+                    <Input
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        maxW="md"
+                        mb={2}
+                    />
+                    <Button onClick={handleSearch} colorScheme="teal">
+                        Search
+                    </Button>
+                </Box> */}
             </Box>
             <Footer />
         </>
