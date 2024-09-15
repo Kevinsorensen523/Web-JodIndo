@@ -16,14 +16,15 @@ import {
 } from "@chakra-ui/react";
 import Button from "./Button";
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import JodLogo from "./../../../public/images/JodLogo.png";
 
 const Navbar = () => {
     const { isOpen, onToggle } = useDisclosure();
-    const display = useBreakpointValue({ base: "none", md: "flex" }); // Show menu items on larger screens
+    const display = useBreakpointValue({ base: "none", lg: "flex" }); // Show menu items on larger screens
 
     return (
         <Box
-            p={4}
+            p={2}
             bg="white"
             shadow="md"
             borderBottom="1px"
@@ -42,20 +43,16 @@ const Navbar = () => {
                 justify="space-between"
                 maxW="1200px"
                 mx="auto"
-                p={2}
             >
                 {/* Logo Section */}
-                <Flex align="center">
+                <Flex align="center" justify="flex-start">
                     <Image
-                        src="https://via.placeholder.com/150x50?text=Logo"
+                        src={JodLogo}
                         alt="Logo"
-                        boxSize="50px"
-                        objectFit="cover"
-                        mr={2}
+                        boxSize="80px"
+                        objectFit="contain"
                     />
-                    <Text fontSize="xl" fontWeight="bold">
-                        JOD
-                    </Text>
+
                     {/* Language Dropdown */}
                     <Menu display={{ base: "none", md: "flex" }}>
                         <MenuButton
@@ -74,7 +71,7 @@ const Navbar = () => {
 
                 {/* Hamburger Icon for Mobile */}
                 <IconButton
-                    display={{ base: "flex", md: "none" }}
+                    display={{ base: "flex", lg: "none" }}
                     icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                     onClick={onToggle}
                     aria-label="Toggle Navigation"
@@ -108,7 +105,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <Collapse in={isOpen}>
                 <Box
-                    display={{ base: "block", md: "none" }}
+                    display={{ base: "block", lg: "none" }}
                     p={4}
                     bg="white"
                     borderBottom="1px"

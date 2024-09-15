@@ -12,13 +12,14 @@ import {
     IconButton,
     Flex,
 } from "@chakra-ui/react";
-import Card from "../Components/Card";
+import Card from "../Components/Card/Card";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Button from "../Components/Button";
-import CardGrid from "../Components/CardGrid";
+import CardGrid from "../Components/Card/CardGrid";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import Home1 from "./../../../public/images/home1.png";
+import Home2 from "./../../../public/images/home2.png";
 import Card1 from "./../../../public/images/card1.png";
 import Card2 from "./../../../public/images/card2.png";
 import CardPekerja1 from "./../../../public/images/cardPekerja1.png";
@@ -27,7 +28,8 @@ import CardPekerja3 from "./../../../public/images/cardPekerja3.png";
 import CardPekerja4 from "./../../../public/images/cardPekerja4.png";
 import CardPekerja5 from "./../../../public/images/cardPekerja5.png";
 import CardPekerja6 from "./../../../public/images/cardPekerja6.png";
-import CardGridPekerja from "../Components/CardGridPekerja";
+import CardGridPekerja from "../Components/CardPekerja/CardGridPekerja";
+import CardGridImpian from "../Components/CardImpian/CardGridImpian";
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState("");
@@ -306,33 +308,54 @@ const Home = () => {
                     textAlign="center"
                     mt={16}
                 >
-                    Ada{" "}
+                    Ingin{" "}
                     <Text as="span" color="#324562">
-                        Pertanyaan?
+                        Bekerja Sama, Bertanya
                     </Text>
+                    , atau
                 </Text>
                 <Text
                     fontWeight="bold"
                     fontSize="3xl"
                     color="#EF9525"
                     textAlign="center"
+                >
+                    Memberi{" "}
+                    <Text as="span" color="#324562">
+                        Kritik dan Saran
+                    </Text>
+                    ?
+                </Text>
+                <Image
+                    src={Home2}
+                    borderRadius="md"
+                    objectFit="cover"
+                    w="180px"
+                    h="150px"
+                    mx="auto"
+                    mt={8}
+                    mb={8}
+                />
+                <Text fontSize="md" color="#324562" textAlign="center">
+                    Hubungi Kami di halaman Kontak JOD!
+                </Text>
+                <Box display="flex" justifyContent="center" mt={4}>
+                    <Button>Kontak Kami</Button>
+                </Box>
+                <Text
+                    fontWeight="bold"
+                    fontSize="3xl"
+                    color="#EF9525"
+                    textAlign="center"
+                    mt={16}
                     mb={8}
                 >
-                    Kami Siap Membantu!
+                    Siap Mendapatkan Apa yang{" "}
+                    <Text as="span" color="#324562">
+                        Kamu Impikan?
+                    </Text>
                 </Text>
-
-                {/* <Box mb={6} textAlign="center">
-                    <Input
-                        placeholder="Search..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        maxW="md"
-                        mb={2}
-                    />
-                    <Button onClick={handleSearch} colorScheme="teal">
-                        Search
-                    </Button>
-                </Box> */}
+                <CardGridImpian cards={cardsPekerja} />
             </Box>
             <Footer />
         </>
