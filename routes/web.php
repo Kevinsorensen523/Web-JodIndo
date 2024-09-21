@@ -22,6 +22,8 @@ Route::group([], function() {
     Route::get('/about', fn() => Inertia::render('About'));
     Route::get('/contact', fn() => Inertia::render('Contact'));
     Route::get('/faq', fn() => Inertia::render('FAQ'));
+    Route::get('/term', fn() => Inertia::render('Term'));
+    Route::get('/privacy', fn() => Inertia::render('Privacy'));
 });
 
 // Route for 404 page
