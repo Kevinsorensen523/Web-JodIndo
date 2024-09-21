@@ -18,6 +18,16 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+Route::group([], function() {
+    Route::get('/about', fn() => Inertia::render('About'));
+    Route::get('/contact', fn() => Inertia::render('Contact'));
+    Route::get('/faq', fn() => Inertia::render('FAQ'));
+});
+
+// Route for 404 page
+Route::get('/404', fn() => Inertia::render('NotFound'));
+
+// Fallback route
+Route::fallback(function () {
+    return redirect('/404');
 });

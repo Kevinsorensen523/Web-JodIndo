@@ -14,16 +14,23 @@ import {
     useDisclosure,
     useBreakpointValue,
 } from "@chakra-ui/react";
+import { Link } from "@inertiajs/react";
 import Button from "./Button";
 import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import JodLogo from "./../../../public/images/JodLogo.png";
+import { motion } from "framer-motion";
+
+const MotionBox = motion(Box);
+const MotionText = motion(Text);
 
 const Navbar = () => {
     const { isOpen, onToggle } = useDisclosure();
-    const display = useBreakpointValue({ base: "none", lg: "flex" }); // Show menu items on larger screens
+    const display = useBreakpointValue({ base: "none", lg: "flex" });
+
+    const isActive = (route) => window.location.pathname === route;
 
     return (
-        <Box
+        <MotionBox
             p={2}
             bg="white"
             shadow="md"
@@ -79,18 +86,52 @@ const Navbar = () => {
 
                 {/* Menu Section */}
                 <Flex align="center" ml={10} spacing={8} display={display}>
-                    <Text mx={4} cursor="pointer">
-                        Beranda
-                    </Text>
-                    <Text mx={4} cursor="pointer">
-                        Tentang JOD
-                    </Text>
-                    <Text mx={4} cursor="pointer">
-                        Soal Sering Ditanya
-                    </Text>
-                    <Text mx={4} cursor="pointer">
-                        Kontak JOD
-                    </Text>
+                    <Link href="/">
+                        <MotionText
+                            mx={4}
+                            cursor="pointer"
+                            fontWeight={isActive("/") ? "bold" : "normal"}
+                            whileHover={{ scale: 1.1 }} // Animation on hover
+                            transition={{ duration: 0.3 }}
+                        >
+                            Beranda
+                        </MotionText>
+                    </Link>
+                    <Link href="/about">
+                        <MotionText
+                            mx={4}
+                            cursor="pointer"
+                            fontWeight={isActive("/about") ? "bold" : "normal"}
+                            whileHover={{ scale: 1.1 }} // Animation on hover
+                            transition={{ duration: 0.3 }}
+                        >
+                            Tentang JOD
+                        </MotionText>
+                    </Link>
+                    <Link href="/faq">
+                        <MotionText
+                            mx={4}
+                            cursor="pointer"
+                            fontWeight={isActive("/faq") ? "bold" : "normal"}
+                            whileHover={{ scale: 1.1 }} // Animation on hover
+                            transition={{ duration: 0.3 }}
+                        >
+                            FAQ
+                        </MotionText>
+                    </Link>
+                    <Link href="/contact">
+                        <MotionText
+                            mx={4}
+                            cursor="pointer"
+                            fontWeight={
+                                isActive("/contact") ? "bold" : "normal"
+                            }
+                            whileHover={{ scale: 1.1 }} // Animation on hover
+                            transition={{ duration: 0.3 }}
+                        >
+                            Kontak JOD
+                        </MotionText>
+                    </Link>
                 </Flex>
 
                 {/* Button Section */}
@@ -112,28 +153,38 @@ const Navbar = () => {
                     borderColor="gray.200"
                 >
                     <Flex direction="column" align="center">
-                        <Text my={2} cursor="pointer">
-                            Beranda
-                        </Text>
-                        <Text my={2} cursor="pointer">
-                            Tentang JOD
-                        </Text>
-                        <Text my={2} cursor="pointer">
-                            Soal Sering Ditanya
-                        </Text>
-                        <Text my={2} cursor="pointer">
-                            Kontak JOD
-                        </Text>
+                        <Link href="/">
+                            <Text my={2} cursor="pointer">
+                                Beranda
+                            </Text>
+                        </Link>
+                        <Link href="/about">
+                            <Text my={2} cursor="pointer">
+                                Tentang JOD
+                            </Text>
+                        </Link>
+                        <Link href="/faq">
+                            <Text my={2} cursor="pointer">
+                                FAQ
+                            </Text>
+                        </Link>
+                        <Link href="/contact">
+                            <Text my={2} cursor="pointer">
+                                Kontak JOD
+                            </Text>
+                        </Link>
                         <Flex direction="column" mt={4}>
                             <ChakraButton variant="outline" mb={2}>
                                 Button 1
                             </ChakraButton>
-                            <Button>Button 2</Button>
+                            <ChakraButton variant="solid">
+                                Button 2
+                            </ChakraButton>
                         </Flex>
                     </Flex>
                 </Box>
             </Collapse>
-        </Box>
+        </MotionBox>
     );
 };
 
