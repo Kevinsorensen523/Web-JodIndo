@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Input, Textarea, Heading } from "@chakra-ui/react";
+import { Box, Input, Textarea, Heading, Text, Flex } from "@chakra-ui/react";
 import Button from "../Components/Button";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
@@ -22,40 +22,121 @@ const Contact = () => {
             <Navbar />
             <Banner title="Kontak JOD" />
             <Box p={20} pt={12}>
-                <Heading as="h2" size="lg" mb={6}>
-                    Kirimkan Pesan
+                <Heading
+                    as="h2"
+                    size="lg"
+                    mb={6}
+                    color="#EF9525"
+                    textAlign="center"
+                >
+                    Kotak Surat
                 </Heading>
+                <Text fontSize="xl" fontWeight="bold" mb={2}>
+                    Nama Lengkap{" "}
+                    <Text
+                        as="span"
+                        fontSize="lg"
+                        fontWeight="bold"
+                        color="#EF9525"
+                    >
+                        *
+                    </Text>
+                </Text>
                 <Input
-                    placeholder="Nama Lengkap"
                     mb={4}
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
+                    borderColor="black"
                 />
+                <Text fontSize="lg" fontWeight="bold" mb={2}>
+                    Nomor Telepon{" "}
+                    <Text
+                        as="span"
+                        fontSize="lg"
+                        fontWeight="bold"
+                        color="#EF9525"
+                    >
+                        *
+                    </Text>
+                </Text>
+
                 <Input
-                    placeholder="Nomor Telepon"
                     mb={4}
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
+                    borderColor="black"
                 />
+                <Text fontSize="lg" fontWeight="bold" mb={2}>
+                    Alamat Surel{" "}
+                    <Text
+                        as="span"
+                        fontSize="lg"
+                        fontWeight="bold"
+                        color="#EF9525"
+                    >
+                        *
+                    </Text>
+                </Text>
+
                 <Input
-                    placeholder="Alamat Surel"
                     mb={4}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    borderColor="black"
                 />
+
+                <Text fontSize="lg" fontWeight="bold" mb={2}>
+                    Judul Surat{" "}
+                    <Text
+                        as="span"
+                        fontSize="lg"
+                        fontWeight="bold"
+                        color="#EF9525"
+                    >
+                        *
+                    </Text>
+                </Text>
                 <Input
-                    placeholder="Judul Surat"
                     mb={4}
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
+                    borderColor="black"
                 />
+
+                <Text fontSize="lg" fontWeight="bold" mb={2}>
+                    Isi Surat{" "}
+                    <Text
+                        as="span"
+                        fontSize="lg"
+                        fontWeight="bold"
+                        color="#EF9525"
+                    >
+                        *
+                    </Text>
+                </Text>
                 <Textarea
-                    placeholder="Isi Surat"
                     mb={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    borderColor="black"
                 />
-                <Button onClick={handleSubmit}>Kirim Surat</Button>
+
+                <Flex justify="center" mt={4}>
+                    <Button onClick={handleSubmit} size="lg">
+                        Kirim Surat
+                    </Button>
+                </Flex>
+                <Box textAlign="center">
+                    <Text color="#EF9525" fontSize="3xl" fontWeight="bold">
+                        Ingin Berbicara Lebih Personal?
+                    </Text>
+                    <Text fontSize="3xl" fontWeight="bold">
+                        Hubungi dan Temukan Kami
+                    </Text>
+                    <Text fontSize="2xl" fontWeight="bold" mt={10}>
+                        PT. Jod Teknologi Indonesia
+                    </Text>
+                </Box>
             </Box>
             <Footer />
         </>
