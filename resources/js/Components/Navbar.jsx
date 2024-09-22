@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Box,
     Flex,
@@ -20,6 +20,10 @@ import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import JodLogo from "./../../../public/images/JodLogo.png";
 import { motion } from "framer-motion";
 
+// Import gambar bendera
+import IDFlag from "./../../../public/images/IDFlag.png";
+import ENFlag from "./../../../public/images/ENFlag.png";
+
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
 
@@ -28,6 +32,14 @@ const Navbar = () => {
     const display = useBreakpointValue({ base: "none", lg: "flex" });
 
     const isActive = (route) => window.location.pathname === route;
+
+    // State untuk menyimpan bahasa yang dipilih
+    const [selectedLanguage, setSelectedLanguage] = useState("ID");
+
+    // Handler untuk mengubah bahasa
+    const handleLanguageChange = (language) => {
+        setSelectedLanguage(language);
+    };
 
     return (
         <MotionBox
@@ -57,23 +69,72 @@ const Navbar = () => {
                         src={JodLogo}
                         alt="Logo"
                         boxSize="80px"
+                        width="120px"
                         objectFit="contain"
                     />
 
-                    {/* Language Dropdown */}
-                    <Menu display={{ base: "none", md: "flex" }}>
-                        <MenuButton
-                            as={IconButton}
-                            icon={<ChevronDownIcon />}
-                            ml={4}
-                            aria-label="Select Language"
-                        />
-                        <MenuList>
-                            <MenuItem>English</MenuItem>
-                            <MenuItem>Bahasa Indonesia</MenuItem>
-                            <MenuItem>Español</MenuItem>
-                        </MenuList>
-                    </Menu>
+                    {/* Language Dropdown wrapped in a Box */}
+                    <Box
+                        ml={10}
+                        borderWidth="1px"
+                        borderRadius="md"
+                        px={2}
+                        py={-32}
+                        display="flex"
+                        alignItems="center"
+                        borderColor="black"
+                    >
+                        <Flex align="center">
+                            <Image
+                                src={
+                                    selectedLanguage === "ID" ? IDFlag : ENFlag
+                                }
+                                alt={
+                                    selectedLanguage === "ID"
+                                        ? "Indonesian Flag"
+                                        : "USA Flag"
+                                }
+                                boxSize="16px"
+                                mr={2}
+                            />
+                            <Text fontWeight="bold">{selectedLanguage}</Text>
+                        </Flex>
+                        <Menu>
+                            <MenuButton
+                                as={IconButton}
+                                icon={<ChevronDownIcon />}
+                                ml={2}
+                                aria-label="Select Language"
+                                bg="transparent" // Menghilangkan background
+                                _hover={{ bg: "transparent" }} // Pastikan background tetap transparent saat hover
+                                _active={{ bg: "transparent" }} // Pastikan background tetap transparent saat aktif
+                            />
+                            <MenuList>
+                                <MenuItem
+                                    onClick={() => handleLanguageChange("ID")}
+                                >
+                                    <Image
+                                        src={IDFlag}
+                                        alt="Indonesian Flag"
+                                        boxSize="20px"
+                                        mr={2}
+                                    />
+                                    <Text>Bahasa Indonesia (ID)</Text>
+                                </MenuItem>
+                                <MenuItem
+                                    onClick={() => handleLanguageChange("EN")}
+                                >
+                                    <Image
+                                        src={ENFlag}
+                                        alt="USA Flag"
+                                        boxSize="20px"
+                                        mr={2}
+                                    />
+                                    <Text>English (EN)</Text>
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Box>
                 </Flex>
 
                 {/* Hamburger Icon for Mobile */}

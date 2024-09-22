@@ -29,39 +29,15 @@ const Footer = () => {
                 maxW="1200px"
                 mx="auto"
             >
-                {/* Links Section */}
-                <VStack spacing={4} align="start">
-                    <Text fontSize="lg" fontWeight="bold">
-                        Links
-                    </Text>
-                    <Link href="#" _hover={{ textDecoration: "underline" }}>
-                        Home
-                    </Link>
-                    <Link href="#" _hover={{ textDecoration: "underline" }}>
-                        About Us
-                    </Link>
-                    <Link href="#" _hover={{ textDecoration: "underline" }}>
-                        Services
-                    </Link>
-                    <Link href="#" _hover={{ textDecoration: "underline" }}>
-                        Contact
-                    </Link>
-                </VStack>
-
                 {/* Contact Information Section */}
-                <VStack spacing={4} align="start">
+                <VStack spacing={1} align="start" lineHeight={6}>
                     <Text fontSize="lg" fontWeight="bold">
-                        Contact Us
+                        JOD
                     </Text>
-                    <Text>Email: support@example.com</Text>
-                    <Text>Phone: +1 (234) 567-890</Text>
-                </VStack>
-
-                {/* Social Media Icons Section */}
-                <VStack spacing={4} align="start">
-                    <Text fontSize="lg" fontWeight="bold">
-                        Follow Us
-                    </Text>
+                    <Text>Jl. Setia Budi Tengah No.89, RT.1/RW.1</Text>
+                    <Text>Kuningan, Setia Budi, Setiabudi District,</Text>
+                    <Text>South Jakarta City, Special Capital</Text>
+                    <Text>Region of Jakarta 12910</Text>
                     <Flex>
                         <IconButton
                             aria-label="Facebook"
@@ -92,7 +68,26 @@ const Footer = () => {
                         />
                     </Flex>
                 </VStack>
+                {/* Links Section */}
+                <VStack spacing={4} align="start">
+                    <Link href="#" _hover={{ textDecoration: "underline" }}>
+                        About JOD
+                    </Link>
+                    <Link href="#" _hover={{ textDecoration: "underline" }}>
+                        FAQ
+                    </Link>
+                    <Link href="#" _hover={{ textDecoration: "underline" }}>
+                        JOD Contact
+                    </Link>
+                    <Link href="#" _hover={{ textDecoration: "underline" }}>
+                        Privacy Policy
+                    </Link>
+                    <Link href="#" _hover={{ textDecoration: "underline" }}>
+                        Terms of Use
+                    </Link>
+                </VStack>
             </Flex>
+            <Text textAlign="center">© 2024 PT. Jod Teknologi Indonesia</Text>
         </Box>
     );
 };
