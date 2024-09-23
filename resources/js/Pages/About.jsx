@@ -65,7 +65,13 @@ const About = () => {
                     mx="auto"
                     mb={16}
                 />
-                <Text color="#151D29" textAlign="left" fontSize="2xl" mb={16}>
+                <Text
+                    color="#151D29"
+                    textAlign="left"
+                    fontSize="2xl"
+                    mb={16}
+                    px={{ md: 28, base: 0 }}
+                >
                     JOD memulai perjalanan bisnisnya di Singapura pada tahun
                     2015, melanjutkan ekspansinya ke Vietnam pada tahun 2022,
                     dan kini hadir di Indonesia pada tahun 2023. Dengan
@@ -74,7 +80,12 @@ const About = () => {
                     Asia Tenggara.
                 </Text>
                 <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={2} w="full">
-                    <Text color="#151D29" textAlign="left" fontSize="2xl">
+                    <Text
+                        color="#151D29"
+                        textAlign="left"
+                        fontSize="2xl"
+                        px={{ md: 28, base: 0 }}
+                    >
                         JOD hadir untuk menciptakan peluang baru dengan
                         meluncurkan platform perekrutan fleksibel yang dapat
                         memenuhi kebutuhan berbagai industri. Kami berkomitmen
@@ -95,7 +106,12 @@ const About = () => {
                         mb={16}
                     />
                 </SimpleGrid>
-                <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={2} w="full">
+                <SimpleGrid
+                    columns={{ base: 1, lg: 2 }}
+                    spacing={2}
+                    w="full"
+                    mt={10}
+                >
                     <Image
                         src={About2}
                         borderRadius="md"
@@ -126,29 +142,31 @@ const About = () => {
                     melaksanakan bisnis kami.
                 </Text>
                 <CardGridNilai cards={cardsNilai} />
-                <Text
-                    fontWeight="bold"
-                    fontSize="3xl"
-                    color="#EF9525"
-                    textAlign="center"
-                >
-                    Ingin Bekerja Sama dengan Kami?
-                </Text>
-                <Image
-                    src={Home2}
-                    borderRadius="md"
-                    objectFit="cover"
-                    w="180px"
-                    h="150px"
-                    mx="auto"
-                    mt={8}
-                    mb={8}
-                />
-                <Text fontSize="md" color="#324562" textAlign="center">
-                    Hubungi Kami di halaman Kontak JOD!
-                </Text>
-                <Box display="flex" justifyContent="center" mt={4}>
-                    <Button>Kontak Kami</Button>
+                <Box mt={20} mb={8}>
+                    <Text
+                        fontWeight="bold"
+                        fontSize="3xl"
+                        color="#EF9525"
+                        textAlign="center"
+                    >
+                        Ingin Bekerja Sama dengan Kami?
+                    </Text>
+                    <Image
+                        src={Home2}
+                        borderRadius="md"
+                        objectFit="cover"
+                        w="180px"
+                        h="150px"
+                        mx="auto"
+                        mt={8}
+                        mb={8}
+                    />
+                    <Text fontSize="md" color="#324562" textAlign="center">
+                        Hubungi Kami di halaman Kontak JOD!
+                    </Text>
+                    <Box display="flex" justifyContent="center" mt={4}>
+                        <Button>Kontak Kami</Button>
+                    </Box>
                 </Box>
             </Box>
             <Footer />

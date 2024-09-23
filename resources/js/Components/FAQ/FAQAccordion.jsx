@@ -28,15 +28,15 @@ const FAQAccordion = ({ faqs }) => {
                                 );
                             }}
                             _expanded={{
-                                bg: "#EF9525", // Background setelah expand
-                                color: "white", // Warna text setelah expand
+                                bg: "#EF9525",
+                                color: "white",
                                 borderBottom: "1px solid orange",
                                 boxShadow:
-                                    "0px 10px 18px rgba(240, 149, 37, 0.3)", // Shadow setelah expand
+                                    "0px 10px 18px rgba(240, 149, 37, 0.3)",
                             }}
-                            bg={expandedIndex === index ? "#EF9525" : "white"} // Background sebelum expand
+                            bg={expandedIndex === index ? "#EF9525" : "white"}
                             color={
-                                expandedIndex === index ? "white" : "#EF9525" // Warna text sebelum expand
+                                expandedIndex === index ? "white" : "#EF9525"
                             }
                             _hover={{
                                 bg:

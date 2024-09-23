@@ -20,7 +20,7 @@ import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import JodLogo from "./../../../public/images/JodLogo.png";
 import { motion } from "framer-motion";
 
-// Import gambar bendera
+// Import images
 import IDFlag from "./../../../public/images/IDFlag.png";
 import ENFlag from "./../../../public/images/ENFlag.png";
 
@@ -29,17 +29,31 @@ const MotionText = motion(Text);
 
 const Navbar = () => {
     const { isOpen, onToggle } = useDisclosure();
-    const display = useBreakpointValue({ base: "none", lg: "flex" });
+    const display = useBreakpointValue({ base: "none", xl: "flex" });
 
     const isActive = (route) => window.location.pathname === route;
 
-    // State untuk menyimpan bahasa yang dipilih
     const [selectedLanguage, setSelectedLanguage] = useState("ID");
 
-    // Handler untuk mengubah bahasa
     const handleLanguageChange = (language) => {
         setSelectedLanguage(language);
     };
+
+    const menuLinks = [
+        { name: "Beranda", href: "/" },
+        { name: "Tentang JOD", href: "/about" },
+        { name: "FAQ", href: "/faq" },
+        { name: "Kontak JOD", href: "/contact" },
+    ];
+
+    const buttons = [
+        {
+            label: "Unduh Aplikasi Pekerja",
+            variant: "secondButton",
+            id: "button1",
+        },
+        { label: "Portal Pemberi Kerja", variant: "solid", id: "button2" },
+    ];
 
     return (
         <MotionBox
@@ -73,13 +87,12 @@ const Navbar = () => {
                         objectFit="contain"
                     />
 
-                    {/* Language Dropdown wrapped in a Box */}
+                    {/* Language Dropdown */}
                     <Box
                         ml={10}
                         borderWidth="1px"
                         borderRadius="md"
                         px={2}
-                        py={-32}
                         display="flex"
                         alignItems="center"
                         borderColor="black"
@@ -105,9 +118,9 @@ const Navbar = () => {
                                 icon={<ChevronDownIcon />}
                                 ml={2}
                                 aria-label="Select Language"
-                                bg="transparent" // Menghilangkan background
-                                _hover={{ bg: "transparent" }} // Pastikan background tetap transparent saat hover
-                                _active={{ bg: "transparent" }} // Pastikan background tetap transparent saat aktif
+                                bg="transparent"
+                                _hover={{ bg: "transparent" }}
+                                _active={{ bg: "transparent" }}
                             />
                             <MenuList>
                                 <MenuItem
@@ -139,68 +152,42 @@ const Navbar = () => {
 
                 {/* Hamburger Icon for Mobile */}
                 <IconButton
-                    display={{ base: "flex", lg: "none" }}
+                    display={{ base: "flex", xl: "none" }}
                     icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                     onClick={onToggle}
                     aria-label="Toggle Navigation"
                 />
 
-                {/* Menu Section */}
+                {/* Desktop Menu */}
                 <Flex align="center" ml={10} spacing={8} display={display}>
-                    <Link href="/">
-                        <MotionText
-                            mx={4}
-                            cursor="pointer"
-                            fontWeight={isActive("/") ? "bold" : "normal"}
-                            whileHover={{ scale: 1.1 }} // Animation on hover
-                            transition={{ duration: 0.3 }}
-                        >
-                            Beranda
-                        </MotionText>
-                    </Link>
-                    <Link href="/about">
-                        <MotionText
-                            mx={4}
-                            cursor="pointer"
-                            fontWeight={isActive("/about") ? "bold" : "normal"}
-                            whileHover={{ scale: 1.1 }} // Animation on hover
-                            transition={{ duration: 0.3 }}
-                        >
-                            Tentang JOD
-                        </MotionText>
-                    </Link>
-                    <Link href="/faq">
-                        <MotionText
-                            mx={4}
-                            cursor="pointer"
-                            fontWeight={isActive("/faq") ? "bold" : "normal"}
-                            whileHover={{ scale: 1.1 }} // Animation on hover
-                            transition={{ duration: 0.3 }}
-                        >
-                            FAQ
-                        </MotionText>
-                    </Link>
-                    <Link href="/contact">
-                        <MotionText
-                            mx={4}
-                            cursor="pointer"
-                            fontWeight={
-                                isActive("/contact") ? "bold" : "normal"
-                            }
-                            whileHover={{ scale: 1.1 }} // Animation on hover
-                            transition={{ duration: 0.3 }}
-                        >
-                            Kontak JOD
-                        </MotionText>
-                    </Link>
+                    {menuLinks.map((link) => (
+                        <Link key={link.name} href={link.href}>
+                            <MotionText
+                                mx={4}
+                                cursor="pointer"
+                                fontWeight={
+                                    isActive(link.href) ? "bold" : "normal"
+                                }
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {link.name}
+                            </MotionText>
+                        </Link>
+                    ))}
                 </Flex>
 
                 {/* Button Section */}
                 <Flex display={display}>
-                    <ChakraButton variant="secondButton" mr={4}>
-                        Button 1
+                    <ChakraButton
+                        key={buttons[0].id}
+                        variant={buttons[0].variant}
+                        mr={4}
+                        borderRadius="xl"
+                    >
+                        {buttons[0].label}
                     </ChakraButton>
-                    <Button>Button 2</Button>
+                    <Button borderRadius="xl">{buttons[1].label}</Button>
                 </Flex>
             </Flex>
 
@@ -214,33 +201,25 @@ const Navbar = () => {
                     borderColor="gray.200"
                 >
                     <Flex direction="column" align="center">
-                        <Link href="/">
-                            <Text my={2} cursor="pointer">
-                                Beranda
-                            </Text>
-                        </Link>
-                        <Link href="/about">
-                            <Text my={2} cursor="pointer">
-                                Tentang JOD
-                            </Text>
-                        </Link>
-                        <Link href="/faq">
-                            <Text my={2} cursor="pointer">
-                                FAQ
-                            </Text>
-                        </Link>
-                        <Link href="/contact">
-                            <Text my={2} cursor="pointer">
-                                Kontak JOD
-                            </Text>
-                        </Link>
+                        {menuLinks.map((link) => (
+                            <Link key={link.name} href={link.href}>
+                                <Text my={2} cursor="pointer">
+                                    {link.name}
+                                </Text>
+                            </Link>
+                        ))}
                         <Flex direction="column" mt={4}>
-                            <ChakraButton variant="outline" mb={2}>
-                                Button 1
+                            <ChakraButton
+                                key={buttons[0].id}
+                                variant={buttons[0].variant}
+                                mb={2}
+                                borderRadius="xl"
+                            >
+                                {buttons[0].label}
                             </ChakraButton>
-                            <ChakraButton variant="solid">
-                                Button 2
-                            </ChakraButton>
+                            <Button borderRadius="xl">
+                                {buttons[1].label}
+                            </Button>
                         </Flex>
                     </Flex>
                 </Box>

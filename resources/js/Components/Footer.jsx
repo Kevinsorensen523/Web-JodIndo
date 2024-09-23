@@ -99,7 +99,7 @@ const Footer = () => {
                 {/* Links Section */}
                 <VStack
                     spacing={2}
-                    align="end"
+                    align={{ base: "start", md: "end" }}
                     pl={0}
                     pr={0}
                     ml={{ md: "0" }}
