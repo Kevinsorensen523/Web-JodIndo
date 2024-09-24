@@ -12,6 +12,7 @@ import {
     IconButton,
     Flex,
 } from "@chakra-ui/react";
+import { Link } from "@inertiajs/react";
 import Card from "../Components/Card/Card";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Button from "../Components/Button";
@@ -299,7 +300,9 @@ const Home = () => {
                     </Accordion>
                 </Box>
                 <Box display="flex" justifyContent="center" mt={10}>
-                    <Button>Pertanyaan Lainnya</Button>
+                    <Link href="/faq">
+                        <Button>Pertanyaan Lainnya</Button>
+                    </Link>
                 </Box>
                 <Text
                     fontWeight="bold"
@@ -340,7 +343,9 @@ const Home = () => {
                     Hubungi Kami di halaman Kontak JOD!
                 </Text>
                 <Box display="flex" justifyContent="center" mt={4}>
-                    <Button>Kontak Kami</Button>
+                    <Link href="/contact">
+                        <Button>Kontak Kami</Button>
+                    </Link>
                 </Box>
                 <Text
                     fontWeight="bold"
