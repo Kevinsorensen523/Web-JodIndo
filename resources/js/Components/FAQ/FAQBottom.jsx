@@ -1,6 +1,7 @@
+import { Box, Image, Text } from "@chakra-ui/react";
+import { Link } from "@inertiajs/react";
 import React from "react";
 import Button from "../Button";
-import { Box, Input, Text, Image } from "@chakra-ui/react";
 import Home2 from "./../../../../public/images/home2.png";
 
 const FAQBottom = () => {
@@ -29,7 +30,9 @@ const FAQBottom = () => {
                 Hubungi Kami di halaman Kontak JOD!
             </Text>
             <Box display="flex" justifyContent="center" mt={4}>
-                <Button>Kontak Kami</Button>
+                <Link href="/contact">
+                    <Button>Kontak Kami</Button>
+                </Link>
             </Box>
         </>
     );

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TermController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,8 @@ Route::group([], function() {
 
 // Route for 404 page
 Route::get('/404', fn() => Inertia::render('NotFound'));
+
+Route::get('/term', [TermController::class, 'index'])->name('terms.index');
 
 // Fallback route
 Route::fallback(function () {

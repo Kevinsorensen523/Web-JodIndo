@@ -1,26 +1,14 @@
-import React, { useState } from "react";
-import {
-    Box,
-    Text,
-    Input,
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-    Image,
-    IconButton,
-    Flex,
-} from "@chakra-ui/react";
-import { Link } from "@inertiajs/react";
-import Card from "../Components/Card/Card";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { Box, Flex, IconButton, Image, Text } from "@chakra-ui/react";
+import { Link } from "@inertiajs/react";
+import React from "react";
 import Button from "../Components/Button";
 import CardGrid from "../Components/Card/CardGrid";
-import Navbar from "../Components/Navbar";
+import CardGridImpian from "../Components/CardImpian/CardGridImpian";
+import CardGridPekerja from "../Components/CardPekerja/CardGridPekerja";
+import FAQAccordion from "../Components/FAQ/FAQAccordion";
 import Footer from "../Components/Footer";
-import Home1 from "./../../../public/images/home1.png";
-import Home2 from "./../../../public/images/home2.png";
+import Navbar from "../Components/Navbar";
 import Card1 from "./../../../public/images/card1.png";
 import Card2 from "./../../../public/images/card2.png";
 import CardPekerja1 from "./../../../public/images/cardPekerja1.png";
@@ -29,16 +17,28 @@ import CardPekerja3 from "./../../../public/images/cardPekerja3.png";
 import CardPekerja4 from "./../../../public/images/cardPekerja4.png";
 import CardPekerja5 from "./../../../public/images/cardPekerja5.png";
 import CardPekerja6 from "./../../../public/images/cardPekerja6.png";
-import CardGridPekerja from "../Components/CardPekerja/CardGridPekerja";
-import CardGridImpian from "../Components/CardImpian/CardGridImpian";
+import Home1 from "./../../../public/images/home1.png";
+import Home2 from "./../../../public/images/home2.png";
 
 const Home = () => {
-    const [searchTerm, setSearchTerm] = useState("");
-
-    const handleSearch = () => {
-        // Implement search logic here
-        console.log("Searching for:", searchTerm);
-    };
+    const faqs = [
+        {
+            question: "Apa itu JobsOnDemand?",
+            answer: "JobsOnDemand adalah layanan pencocokan pekerjaan berbasis lokasi yang menghubungkan pekerja lepas dengan bisnis secara real-time.",
+        },
+        {
+            question: "Bagaimana cara mendaftar sebagai Anggota?",
+            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
+        },
+        {
+            question: "Bagaimana cara mendaftar sebagai Anggota?",
+            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
+        },
+        {
+            question: "Bagaimana cara mendaftar sebagai Anggota?",
+            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
+        },
+    ];
 
     const cards = [
         {
@@ -251,7 +251,8 @@ const Home = () => {
                 </Text>
                 {/* FAQ Section */}
                 <Box mt={8}>
-                    <Text fontSize="2xl" mb={4}>
+                    <FAQAccordion faqs={faqs} />
+                    {/* <Text fontSize="2xl" mb={4}>
                         Frequently Asked Questions
                     </Text>
                     <Accordion allowToggle>
@@ -297,7 +298,7 @@ const Home = () => {
                                 support@example.com.
                             </AccordionPanel>
                         </AccordionItem>
-                    </Accordion>
+                    </Accordion> */}
                 </Box>
                 <Box display="flex" justifyContent="center" mt={10}>
                     <Link href="/faq">

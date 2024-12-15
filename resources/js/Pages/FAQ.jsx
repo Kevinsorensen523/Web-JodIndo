@@ -1,12 +1,11 @@
+import { Box, Input } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Box, Input, Text, Image } from "@chakra-ui/react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 import Banner from "../Components/Banner";
-
-import FAQNotFound from "../Components/FAQ/FAQNotFound";
 import FAQAccordion from "../Components/FAQ/FAQAccordion";
 import FAQBottom from "../Components/FAQ/FAQBottom";
+import FAQNotFound from "../Components/FAQ/FAQNotFound";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 const FAQ = () => {
     const [searchTerm, setSearchTerm] = useState("");

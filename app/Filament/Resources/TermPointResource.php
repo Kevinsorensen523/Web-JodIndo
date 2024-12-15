@@ -29,9 +29,9 @@ class TermPointResource extends Resource
                 Select::make('term_id')
                     ->relationship('term', 'title')
                     ->required(),
-                Textarea::make('content')->required()
-            ]);
-    }
+                    Textarea::make('content')->required()
+                ]);
+            }
 
     public static function table(Table $table): Table
     {

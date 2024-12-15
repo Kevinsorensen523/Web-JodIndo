@@ -1,33 +1,18 @@
-import React, { useState } from "react";
-import {
-    Box,
-    Text,
-    Input,
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-    Image,
-    IconButton,
-    Flex,
-    SimpleGrid,
-} from "@chakra-ui/react";
-import Card from "../Components/Card/Card";
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import Button from "../Components/Button";
-import CardGrid from "../Components/Card/CardGrid";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Link } from "@inertiajs/react";
+import React from "react";
 import Banner from "../Components/Banner";
+import Button from "../Components/Button";
+import CardGridNilai from "../Components/CardNilai/CardGridNilai";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 import About1 from "./../../../public/images/about1.png";
 import About2 from "./../../../public/images/about2.png";
+import Clarity from "./../../../public/images/clarity.png";
+import Equality from "./../../../public/images/equality.png";
 import Home1 from "./../../../public/images/home1.png";
 import Home2 from "./../../../public/images/home2.png";
-import Clarity from "./../../../public/images/clarity.png";
 import Rapidity from "./../../../public/images/rapidity.png";
-import Equality from "./../../../public/images/equality.png";
-import CardGridNilai from "../Components/CardNilai/CardGridNilai";
 
 const About = () => {
     const cardsNilai = [
@@ -165,7 +150,9 @@ const About = () => {
                         Hubungi Kami di halaman Kontak JOD!
                     </Text>
                     <Box display="flex" justifyContent="center" mt={4}>
-                        <Button>Kontak Kami</Button>
+                        <Link href="/contact">
+                            <Button>Kontak Kami</Button>
+                        </Link>
                     </Box>
                 </Box>
             </Box>

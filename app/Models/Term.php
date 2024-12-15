@@ -13,6 +13,6 @@ class Term extends Model
 
     public function points()
     {
-        return $this->hasMany(TermPoint::class);
+        return $this->hasMany(TermPoint::class, "term_id", "id");
     }
 }

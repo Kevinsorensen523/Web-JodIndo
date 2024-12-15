@@ -13,6 +13,6 @@ class TermPoint extends Model
 
     public function term()
     {
-        return $this->belongsTo(Term::class);
+        return $this->belongsTo(Term::class, 'term_id', 'id');
     }
 }

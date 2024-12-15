@@ -4,94 +4,82 @@ import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
-const terms = [
-    {
-        title: "KETENTUAN PENGGUNAAN",
-        points: [
-            "Anda berusia minimal 18 tahun.",
-            "Anda setuju dengan Syarat ini dan memiliki wewenang untuk menggunakannya.",
-            "Anda memiliki kapasitas hukum untuk memahami dan mematuhi Syarat ini.",
-            "Penerimaan dan pelaksanaan Syarat ini tidak melanggar kewajiban hukum atau perjanjian lain yang Anda ikuti.",
-            "Anda akan menggunakan layanan ini hanya untuk tujuan yang sah.",
-            "Anda akan menjaga kerahasiaan informasi login dan akses lainnya.",
-            "Anda akan menyediakan bukti identitas jika diminta.",
-            "Anda setuju untuk memberikan informasi yang akurat dan memperbaruinya jika terjadi perubahan.",
-            "Anda akan membantu kami dalam hal pelanggaran Syarat ini jika diperlukan.",
-            "Anda bertanggung jawab penuh atas segala kerugian atau kerusakan yang terjadi.",
-            "Kewajiban Anda berdasarkan Syarat ini sah dan dapat ditegakkan.",
-            "Tidak ada proses hukum yang tertunda atau ancaman yang dapat memengaruhi kemampuan Anda untuk memenuhi kewajiban berdasarkan Syarat ini.",
-        ],
-    },
-    {
-        title: "PROFIL ANGGOTA",
-        points: [
-            "Anda berusia minimal 18 tahun.",
-            "Anda setuju dengan Syarat ini dan memiliki wewenang untuk menggunakannya.",
-            "Anda memiliki kapasitas hukum untuk memahami dan mematuhi Syarat ini.",
-        ],
-    },
-    {
-        title: "LAMARAN DAN PENYELESAIAN PEKERJAAN",
-        points: [
-            "Anda berusia minimal 18 tahun.",
-            "Anda setuju dengan Syarat ini dan memiliki wewenang untuk menggunakannya.",
-            "Anda memiliki kapasitas hukum untuk memahami dan mematuhi Syarat ini.",
-        ],
-    },
-];
-
-const Term = () => {
+const Term = ({ terms = [] }) => {
     return (
         <>
             <Navbar />
             <Banner title="Ketentuan Penggunaan" />
             <Box p={20} pt={12}>
                 <Text color="black" fontSize="lg">
-                    Terima kasih telah bergabung dengan JobsOnDemand, layanan
-                    yang disediakan oleh PT JOD TEKNOLOGI INDONESIA (Jod ID).
-                    JobsOnDemand merupakan platform yang menghubungkan pekerja
-                    lepas dengan bisnis secara real-time melalui aplikasi
-                    seluler yang dapat diakses di perangkat Android atau iOS.
+                    Terima kasih telah mendaftar di JobsOnDemand, layanan online
+                    yang disediakan dan dikelola oleh PT JOD TEKNOLOGI INDONESIA
+                    (Jod ID). JobsOnDemand adalah layanan pencocokan pekerjaan
+                    berbasis lokasi secara real-time untuk menghubungkan pekerja
+                    lepas individu dengan bisnis. JobsOnDemand dikirimkan kepada
+                    anggota individu kami (“Anggota”) melalui aplikasi seluler
+                    asli di perangkat seluler Android atau iOS, dan kepada
+                    pelanggan korporat kami (“Pelanggan”) melalui portal web
+                    online JobsOnDemand (“Situs Web”). Anggota melamar pekerjaan
+                    yang diposting oleh Pelanggan kami, dan Anggota yang
+                    berhasil melakukan pekerjaan mereka di lokasi di tempat
+                    Pelanggan kami, dan akan menerima pembayaran dari Pelanggan
+                    setelah menyelesaikan pekerjaan. Kami tidak mempekerjakan
+                    atau menyediakan karyawan untuk melakukan layanan yang
+                    dibutuhkan oleh Pelanggan kami. Kami juga bukan agen tenaga
+                    kerja yang mempekerjakan individu untuk melakukan layanan
+                    atas nama kami. Fungsi bisnis Jod ID adalah untuk
+                    mengoperasikan JobsOnDemand, mengelola basis data Anggota
+                    dan Pelanggan kami dan untuk memfasilitasi kontrak layanan
+                    antara Anggota dan Pelanggan kami.
                 </Text>
                 <Text color="black" fontSize="lg" mt={4}>
-                    Anggota dapat melamar pekerjaan yang diiklankan oleh
-                    Pelanggan kami, dan setelah menyelesaikan tugas di lokasi
-                    yang ditentukan, Anggota akan menerima pembayaran dari
-                    Pelanggan. Kami tidak berfungsi sebagai agen tenaga kerja;
-                    kami hanya mengelola JobsOnDemand dan memfasilitasi
-                    interaksi antara Anggota dan Pelanggan.
-                </Text>
-                <Text color="black" fontSize="lg" mt={4}>
-                    Sebelum menggunakan layanan kami, baik sebagai Anggota
-                    maupun Pelanggan, Anda diharuskan untuk membaca dengan
-                    cermat syarat dan ketentuan penggunaan (selanjutnya disebut
-                    “Syarat dan Ketentuan”). Dengan mengklik tombol “Saya
-                    Setuju”, Anda menegaskan bahwa Anda telah memahami dan
-                    menyetujui Syarat dan Ketentuan ini. Jika Anda tidak setuju,
-                    Anda tidak diperkenankan untuk menggunakan layanan kami.
-                </Text>
-                <Text color="black" fontSize="lg" mt={4}>
-                    Dengan demikian, untuk mendaftar dan menggunakan layanan
-                    JobsOnDemand, Anda setuju dengan ketentuan berikut:
+                    Ketika mendaftar di JobsOnDemand dan sebelum menggunakan
+                    layanan kami, baik sebagai Anggota atau Pelanggan, Anda
+                    harus membaca dengan seksama syarat dan ketentuan untuk
+                    penggunaan JobsOnDemand (selanjutnya disebut sebagai “Syarat
+                    dan Ketentuan”). Ini adalah prasyarat untuk penggunaan
+                    JobsOnDemand. Oleh karena itu, dengan mengklik tombol “Saya
+                    Setuju”, Anda menyatakan bahwa Anda telah membaca dan setuju
+                    untuk terikat oleh Syarat dan Ketentuan ini. Jika Anda tidak
+                    atau tidak dapat menyetujui Syarat & Ketentuan ini, Anda
+                    tidak akan diizinkan untuk menggunakan JobsOnDemand dan akan
+                    diminta untuk menghentikan penggunaan layanan kami dengan
+                    segera. Untuk selanjutnya, untuk mendaftar dan menggunakan
+                    layanan yang disediakan oleh JobsOnDemand, Anda menyetujui
+                    ketentuan-ketentuan berikut dalam Syarat & Ketentuan:
                 </Text>
 
-                {terms.map((term, index) => (
-                    <Box key={index} mt={8}>
-                        <Text color="black" fontWeight="bold" fontSize="lg">
-                            {index + 1}. {term.title}
-                        </Text>
-                        {term.points.map((point, pointIndex) => (
-                            <Text
-                                color="black"
-                                fontSize="lg"
-                                mt={2}
-                                key={pointIndex}
-                            >
-                                {index + 1}.{pointIndex + 1} {point}
+                {terms.length > 0 ? (
+                    terms.map((term, index) => (
+                        <Box key={index} mt={4}>
+                            <Text color="black" fontWeight="bold" fontSize="lg">
+                                {index + 1}. {term.title}
                             </Text>
-                        ))}
-                    </Box>
-                ))}
+                            <Text color="black">{term.description}</Text>
+                            {term.points.map((point, pointIndex) => (
+                                <Text
+                                    color="black"
+                                    fontSize="lg"
+                                    mt={2}
+                                    key={pointIndex}
+                                >
+                                    {index + 1}.{pointIndex + 1} {point.content}
+                                </Text>
+                            ))}
+                        </Box>
+                    ))
+                ) : (
+                    <Text color="black" fontSize="lg">
+                        Tidak ada data yang tersedia.
+                    </Text>
+                )}
+                <Text color="martin" fontWeight="bold" fontSize="lg" mt={6}>
+                    SAYA DENGAN INI MENGAKUI BAHWA SAYA TELAH MEMBACA DAN
+                    MEMAHAMI KETENTUAN PENGGUNAAN & KETENTUAN DAN SETUJU BAHWA
+                    PENGGUNAAN LAYANAN JOBSONDEMAND SAYA ADALAH PENGAKUAN ATAS
+                    PERSETUJUAN SAYA UNTUK TERIKAT OLEH KETENTUAN PENGGUNAAN &
+                    KETENTUAN INI.
+                </Text>
             </Box>
             <Footer />
         </>
