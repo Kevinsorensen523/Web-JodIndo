@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('points', function (Blueprint $table) {
+        Schema::create('term_points', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('term_id')->constrained('terms')->cascadeOnDelete(); // Relasi ke tabel terms
+            $table->text('content'); // Isi poin
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('points');
+        Schema::dropIfExists('term_points');
     }
 };

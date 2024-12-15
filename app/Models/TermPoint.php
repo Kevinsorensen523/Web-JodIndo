@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Term extends Model
+class TermPoint extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['term_id', 'content'];
 
-    public function points()
+    public function term()
     {
-        return $this->hasMany(TermPoint::class);
+        return $this->belongsTo(Term::class);
     }
 }
