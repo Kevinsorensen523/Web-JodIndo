@@ -34,10 +34,6 @@ const Home = () => {
             question: "Bagaimana cara mendaftar sebagai Anggota?",
             answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
         },
-        {
-            question: "Bagaimana cara mendaftar sebagai Anggota?",
-            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
-        },
     ];
 
     const cards = [

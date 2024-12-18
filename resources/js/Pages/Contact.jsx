@@ -1,14 +1,14 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 import Banner from "../Components/Banner";
-import ContactForm from "../Components/Contact/ContactForm";
 import ContactDetails from "../Components/Contact/ContactDetails";
-import LocationImage from "./../../../public/images/location.png";
+import ContactForm from "../Components/Contact/ContactForm";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 import EmailImage from "./../../../public/images/email.png";
+import LocationImage from "./../../../public/images/location.png";
 import PhoneImage from "./../../../public/images/phone.png";
 
-const Contact = () => {
+const Contact = ({ contacts = [] }) => {
     const contactDetails = [
         {
             image: LocationImage,

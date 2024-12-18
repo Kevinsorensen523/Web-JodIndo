@@ -1,20 +1,20 @@
-import React from "react";
 import {
     Box,
     Flex,
-    Text,
+    Image,
     Link,
+    Text,
     useBreakpointValue,
     VStack,
-    Image,
 } from "@chakra-ui/react";
-import TelegramImage from "./../../../public/images/telegram.png";
-import XImage from "./../../../public/images/x.png";
+import React from "react";
 import InstagramImage from "./../../../public/images/instagram.png";
-import LinkedinImage from "./../../../public/images/linkedin.png";
-import WhatsappImage from "./../../../public/images/whatsapp.png";
-import TiktokImage from "./../../../public/images/tiktok.png";
 import JodFooter from "./../../../public/images/jodFooter.png";
+import LinkedinImage from "./../../../public/images/linkedin.png";
+import TelegramImage from "./../../../public/images/telegram.png";
+import TiktokImage from "./../../../public/images/tiktok.png";
+import WhatsappImage from "./../../../public/images/whatsapp.png";
+import XImage from "./../../../public/images/x.png";
 
 const Footer = () => {
     const display = useBreakpointValue({ base: "column", md: "row" });
@@ -128,6 +128,12 @@ const Footer = () => {
                     </Link>
                     <Link href="/term" _hover={{ textDecoration: "underline" }}>
                         Ketentuan Penggunaan
+                    </Link>
+                    <Link
+                        href="/admin"
+                        _hover={{ textDecoration: "underline" }}
+                    >
+                        Admin Login
                     </Link>
                 </VStack>
             </Flex>
