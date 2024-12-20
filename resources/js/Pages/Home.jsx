@@ -21,7 +21,7 @@ import Home1 from "./../../../public/images/home1.png";
 import Home2 from "./../../../public/images/home2.png";
 
 const Home = () => {
-    const { faqs } = usePage().props;
+    const { faqs, pekerjas, pemberi_kerjas } = usePage().props;
 
     const cards = [
         {
@@ -196,7 +196,7 @@ const Home = () => {
                         Pekerja
                     </Text>
                 </Text>
-                <CardGridPekerja cards={cardsPekerja} />
+                <CardGridPekerja cards={pekerjas} />
                 <Text
                     fontWeight="bold"
                     fontSize="xl"
@@ -210,7 +210,7 @@ const Home = () => {
                         Pemberi Kerja
                     </Text>
                 </Text>
-                <CardGridPekerja cards={cardsPemberiKerja} />
+                <CardGridPekerja cards={pemberi_kerjas} />
                 <Text
                     fontWeight="bold"
                     fontSize="3xl"
@@ -235,53 +235,6 @@ const Home = () => {
                 {/* FAQ Section */}
                 <Box mt={8}>
                     <FAQAccordion faqs={faqs} />
-                    {/* <Text fontSize="2xl" mb={4}>
-                        Frequently Asked Questions
-                    </Text>
-                    <Accordion allowToggle>
-                        <AccordionItem>
-                            <h2>
-                                <AccordionButton>
-                                    <Box flex="1" textAlign="left">
-                                        What is this website about?
-                                    </Box>
-                                    <AccordionIcon />
-                                </AccordionButton>
-                            </h2>
-                            <AccordionPanel pb={4}>
-                                This website provides information and features
-                                related to our product and services.
-                            </AccordionPanel>
-                        </AccordionItem>
-                        <AccordionItem>
-                            <h2>
-                                <AccordionButton>
-                                    <Box flex="1" textAlign="left">
-                                        How can I contact support?
-                                    </Box>
-                                    <AccordionIcon />
-                                </AccordionButton>
-                            </h2>
-                            <AccordionPanel pb={4}>
-                                You can contact support by emailing us at
-                                support@example.com.
-                            </AccordionPanel>
-                        </AccordionItem>
-                        <AccordionItem>
-                            <h2>
-                                <AccordionButton>
-                                    <Box flex="1" textAlign="left">
-                                        How can I contact support?
-                                    </Box>
-                                    <AccordionIcon />
-                                </AccordionButton>
-                            </h2>
-                            <AccordionPanel pb={4}>
-                                You can contact support by emailing us at
-                                support@example.com.
-                            </AccordionPanel>
-                        </AccordionItem>
-                    </Accordion> */}
                 </Box>
                 <Box display="flex" justifyContent="center" mt={10}>
                     <Link href="/faq">
@@ -344,7 +297,7 @@ const Home = () => {
                         Kamu Impikan?
                     </Text>
                 </Text>
-                <CardGridImpian cards={cardsPekerja} />
+                <CardGridImpian />
             </Box>
             <Footer />
         </>

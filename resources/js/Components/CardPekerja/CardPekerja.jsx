@@ -1,7 +1,9 @@
+import { Box, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { Box, Image, Text, Stack } from "@chakra-ui/react";
 
 const CardPekerja = ({ title, description, imageUrl, width, height }) => {
+    const imageDisplay = `/storage/${imageUrl}`;
+
     return (
         <Box
             borderWidth="1px"
@@ -9,18 +11,18 @@ const CardPekerja = ({ title, description, imageUrl, width, height }) => {
             overflow="hidden"
             boxShadow="0px 10px 18px rgba(240, 149, 37, 0.3)"
             p={8}
-            maxW="7xl" // Card tetap lebar penuh
+            maxW="7xl"
             w="full"
-            mx="auto" // Center the card horizontally
+            mx="auto"
         >
             <Image
-                src={imageUrl}
+                src={imageDisplay}
                 alt={title}
                 borderRadius="md"
                 objectFit="cover"
-                w={width} // Custom width for the image
-                h={height} // Custom height for the image
-                mx="auto" // Center the image within the card
+                w={width}
+                h={height}
+                mx="auto"
                 mb={6}
             />
             <Text
