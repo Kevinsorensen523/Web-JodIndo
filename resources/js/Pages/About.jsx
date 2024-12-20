@@ -1,5 +1,5 @@
 import { Box, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import React from "react";
 import Banner from "../Components/Banner";
 import Button from "../Components/Button";
@@ -15,6 +15,7 @@ import Home2 from "./../../../public/images/home2.png";
 import Rapidity from "./../../../public/images/rapidity.png";
 
 const About = () => {
+    const { nilais } = usePage().props;
     const cardsNilai = [
         {
             title: "Clarity",
@@ -126,7 +127,7 @@ const About = () => {
                     Jod memiliki nilai-nilai yang selalu dijunjung tinggi dalam
                     melaksanakan bisnis kami.
                 </Text>
-                <CardGridNilai cards={cardsNilai} />
+                <CardGridNilai cards={nilais} />
                 <Box mt={20} mb={8}>
                     <Text
                         fontWeight="bold"

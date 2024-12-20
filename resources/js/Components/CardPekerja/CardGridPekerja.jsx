@@ -1,5 +1,5 @@
-import React from "react";
 import { Box, SimpleGrid } from "@chakra-ui/react";
+import React from "react";
 import CardPekerja from "./CardPekerja";
 
 const CardGridPekerja = ({ cards }) => {

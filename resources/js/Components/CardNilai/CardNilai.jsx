@@ -1,7 +1,8 @@
+import { Box, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { Box, Image, Text, Stack } from "@chakra-ui/react";
 
 const CardNilai = ({ title, description, imageUrl, width, height }) => {
+    const imageDisplay = `/storage/${imageUrl}`;
     return (
         <Box
             borderWidth="1px"
@@ -14,7 +15,7 @@ const CardNilai = ({ title, description, imageUrl, width, height }) => {
             mx="auto"
         >
             <Image
-                src={imageUrl}
+                src={imageDisplay}
                 alt={title}
                 borderRadius="md"
                 objectFit="cover"

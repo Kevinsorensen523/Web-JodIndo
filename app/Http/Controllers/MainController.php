@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Faq;
-use App\Models\Impian;
+use App\Models\Nilai;
 use App\Models\Pekerja;
 use App\Models\PemberiKerja;
 use App\Models\Term;
@@ -16,9 +16,9 @@ class MainController extends Controller
 {
     public function about()
     {
-        $impians = Impian::all();
+        $nilais = Nilai::all();
         return Inertia::render('About', [
-            'impians' => $impians,
+            'nilais' => $nilais,
         ]);
     }
 
