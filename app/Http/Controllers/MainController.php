@@ -13,7 +13,7 @@ class MainController extends Controller
 {
     public function contact()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::first();
         return Inertia::render('Contact', [
             'contacts' => $contacts,
         ]);
@@ -23,6 +23,14 @@ class MainController extends Controller
     {
         $faqs = Faq::all();
         return Inertia::render('FAQ', [
+            'faqs' => $faqs,
+        ]);
+    }
+
+    public function home()
+    {
+        $faqs = FAQ::latest()->take(3)->get();
+        return Inertia::render('Home', [
             'faqs' => $faqs,
         ]);
     }

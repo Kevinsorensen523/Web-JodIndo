@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Box, Flex, IconButton, Image, Text } from "@chakra-ui/react";
-import { Link } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import React from "react";
 import Button from "../Components/Button";
 import CardGrid from "../Components/Card/CardGrid";
@@ -21,20 +21,7 @@ import Home1 from "./../../../public/images/home1.png";
 import Home2 from "./../../../public/images/home2.png";
 
 const Home = () => {
-    const faqs = [
-        {
-            question: "Apa itu JobsOnDemand?",
-            answer: "JobsOnDemand adalah layanan pencocokan pekerjaan berbasis lokasi yang menghubungkan pekerja lepas dengan bisnis secara real-time.",
-        },
-        {
-            question: "Bagaimana cara mendaftar sebagai Anggota?",
-            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
-        },
-        {
-            question: "Bagaimana cara mendaftar sebagai Anggota?",
-            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
-        },
-    ];
+    const { faqs } = usePage().props;
 
     const cards = [
         {

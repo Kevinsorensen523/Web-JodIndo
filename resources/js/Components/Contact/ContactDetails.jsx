@@ -1,7 +1,7 @@
+import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import { Box, Text, Image } from "@chakra-ui/react";
 
-const ContactDetails = ({ details }) => {
+const ContactDetails = ({ details, name }) => {
     return (
         <>
             <Box textAlign="center" mb={16}>
@@ -12,7 +12,7 @@ const ContactDetails = ({ details }) => {
                     Hubungi dan Temukan Kami
                 </Text>
                 <Text fontSize="2xl" fontWeight="bold" mt={10} mb={10}>
-                    PT. Jod Teknologi Indonesia
+                    {name}
                 </Text>
                 {details.map((detail, index) => (
                     <Box key={index} textAlign="center" mt={10}>

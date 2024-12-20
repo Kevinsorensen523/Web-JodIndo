@@ -31,9 +31,10 @@ Route::group([], function() {
 // Route for 404 page
 Route::get('/404', fn() => Inertia::render('NotFound'));
 
-Route::get('/term', [MainController::class, 'term'])->name('term');
-Route::get('/contacts', [MainController::class, 'contact'])->name('contact');
+Route::get("/", [MainController::class, 'home'])->name('home');
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/faq', [MainController::class, 'faq'])->name('faq');
+Route::get('/term', [MainController::class, 'term'])->name('term');
 
 // Fallback route
 Route::fallback(function () {
