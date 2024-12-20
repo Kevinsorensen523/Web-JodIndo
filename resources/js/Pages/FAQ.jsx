@@ -1,4 +1,5 @@
 import { Box, Input } from "@chakra-ui/react";
+import { usePage } from "@inertiajs/react";
 import React, { useState } from "react";
 import Banner from "../Components/Banner";
 import FAQAccordion from "../Components/FAQ/FAQAccordion";
@@ -8,27 +9,8 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 const FAQ = () => {
+    const { faqs } = usePage().props;
     const [searchTerm, setSearchTerm] = useState("");
-
-    // Example list of FAQs (can also be moved to a separate component or API call)
-    const faqs = [
-        {
-            question: "Apa itu JobsOnDemand?",
-            answer: "JobsOnDemand adalah layanan pencocokan pekerjaan berbasis lokasi yang menghubungkan pekerja lepas dengan bisnis secara real-time.",
-        },
-        {
-            question: "Bagaimana cara mendaftar sebagai Anggota?",
-            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
-        },
-        {
-            question: "Bagaimana cara mendaftar sebagai Anggota?",
-            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
-        },
-        {
-            question: "Bagaimana cara mendaftar sebagai Anggota?",
-            answer: "Anda dapat mendaftar melalui aplikasi JobsOnDemand dengan mengikuti petunjuk pendaftaran yang tersedia.",
-        },
-    ];
 
     // Filter FAQs based on search term
     const filteredFaqs = faqs.filter((faq) =>
