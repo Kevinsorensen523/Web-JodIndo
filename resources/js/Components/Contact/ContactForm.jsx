@@ -1,18 +1,8 @@
-import React, { useState } from "react";
-import { Box, Input, Textarea, Heading, Text, Flex } from "@chakra-ui/react";
+import { Box, Flex, Heading, Input, Text, Textarea } from "@chakra-ui/react";
+import React from "react";
 import Button from "../Button";
 
-const ContactForm = () => {
-    const [fullName, setFullName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [email, setEmail] = useState("");
-    const [subject, setSubject] = useState("");
-    const [message, setMessage] = useState("");
-
-    const handleSubmit = () => {
-        console.log({ fullName, phoneNumber, email, subject, message });
-    };
-
+const ContactForm = ({ data, setData, handleSubmit, processing, errors }) => {
     return (
         <Box p={20} pt={8}>
             <Heading
@@ -32,8 +22,8 @@ const ContactForm = () => {
             </Text>
             <Input
                 mb={4}
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
+                value={data.fullName}
+                onChange={(e) => setData("fullName", e.target.value)}
                 borderColor="black"
             />
             <Text fontSize="lg" fontWeight="bold" mb={2}>
@@ -44,8 +34,8 @@ const ContactForm = () => {
             </Text>
             <Input
                 mb={4}
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                value={data.phoneNumber}
+                onChange={(e) => setData("phoneNumber", e.target.value)}
                 borderColor="black"
             />
             <Text fontSize="lg" fontWeight="bold" mb={2}>
@@ -56,8 +46,8 @@ const ContactForm = () => {
             </Text>
             <Input
                 mb={4}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={data.email}
+                onChange={(e) => setData("email", e.target.value)}
                 borderColor="black"
             />
             <Text fontSize="lg" fontWeight="bold" mb={2}>
@@ -68,8 +58,8 @@ const ContactForm = () => {
             </Text>
             <Input
                 mb={4}
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
+                value={data.subject}
+                onChange={(e) => setData("subject", e.target.value)}
                 borderColor="black"
             />
             <Text fontSize="lg" fontWeight="bold" mb={2}>
@@ -80,12 +70,12 @@ const ContactForm = () => {
             </Text>
             <Textarea
                 mb={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                value={data.message}
+                onChange={(e) => setData("message", e.target.value)}
                 borderColor="black"
             />
             <Flex justify="center" mt={4} mb={6}>
-                <Button onClick={handleSubmit} size="lg">
+                <Button onClick={handleSubmit} size="lg" isLoading={processing}>
                     Kirim Surat
                 </Button>
             </Flex>

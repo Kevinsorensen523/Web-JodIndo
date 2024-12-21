@@ -1,4 +1,4 @@
-import { usePage } from "@inertiajs/react";
+import { router, useForm, usePage } from "@inertiajs/react";
 import React from "react";
 import Banner from "../Components/Banner";
 import ContactDetails from "../Components/Contact/ContactDetails";
@@ -10,10 +10,25 @@ import LocationImage from "./../../../public/images/location.png";
 import PhoneImage from "./../../../public/images/phone.png";
 
 const Contact = () => {
-    const { contacts } = usePage().props;
+    const { contacts, flash } = usePage().props;
     const contactName = contacts?.name;
 
-    // console.log(contacts);
+    const { data, setData, post, processing, errors } = useForm({
+        fullName: "",
+        phoneNumber: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        router.post("/contact/message", data, {
+            onFinish: () => {
+                console.log("Message submitted successfully");
+            },
+        });
+    };
 
     const contactDetails = [
         {
@@ -32,9 +47,16 @@ const Contact = () => {
 
     return (
         <>
+            {flash?.success && <div>{flash.success}</div>}
             <Navbar />
             <Banner title="Kontak JOD" />
-            <ContactForm />
+            <ContactForm
+                data={data}
+                setData={setData}
+                handleSubmit={handleSubmit}
+                processing={processing}
+                errors={errors}
+            />
             <ContactDetails details={contactDetails} name={contactName} />
             <Footer />
         </>

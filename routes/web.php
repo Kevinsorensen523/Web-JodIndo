@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\TermController;
+use App\Http\Controllers\MessageController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +27,8 @@ Route::group([], function() {
     Route::get('/term', fn() => Inertia::render('Term'));
     Route::get('/privacy', fn() => Inertia::render('Privacy'));
 });
+
+Route::post('/contact/message', [MessageController::class, 'store'])->name('message.store');
 
 // Route for 404 page
 Route::get('/404', fn() => Inertia::render('NotFound'));
