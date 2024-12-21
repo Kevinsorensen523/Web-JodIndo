@@ -21,8 +21,7 @@ const Contact = () => {
         message: "",
     });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = () => {
         router.post("/contact/message", data, {
             onFinish: () => {
                 console.log("Message submitted successfully");
