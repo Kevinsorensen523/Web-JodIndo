@@ -21,14 +21,6 @@ const Contact = () => {
         message: "",
     });
 
-    const handleSubmit = () => {
-        router.post("/contact/message", data, {
-            onFinish: () => {
-                console.log("Message submitted successfully");
-            },
-        });
-    };
-
     const contactDetails = [
         {
             image: LocationImage,
