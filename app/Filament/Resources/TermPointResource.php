@@ -20,7 +20,11 @@ class TermPointResource extends Resource
 {
     protected static ?string $model = TermPoint::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'zondicon-list';
+
+    protected static ?string $navigationLabel = 'Privacy Term List';
+
+    protected static ?string $navigationGroup = 'Terms';
 
     public static function form(Form $form): Form
     {

@@ -20,7 +20,11 @@ class NilaiResource extends Resource
 {
     protected static ?string $model = Nilai::class;
 
+    protected static ?string $navigationLabel = 'Card Value';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $navigationGroup = 'Editable Cards';
 
     public static function form(Form $form): Form
     {

@@ -17,7 +17,11 @@ class TermResource extends Resource
 {
     protected static ?string $model = Term::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'gmdi-privacy-tip-r';
+
+    protected static ?string $navigationLabel = 'Privacy Term Title';
+
+    protected static ?string $navigationGroup = 'Terms';
 
     public static function form(Form $form): Form
     {

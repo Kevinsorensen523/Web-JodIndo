@@ -20,7 +20,12 @@ class PekerjaResource extends Resource
 {
     protected static ?string $model = Pekerja::class;
 
+    protected static ?string $navigationLabel = 'Card Pekerja';
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $navigationGroup = 'Editable Cards';
+
 
     // Form schema for Add and Edit pages
     public static function form(Form $form): Form
