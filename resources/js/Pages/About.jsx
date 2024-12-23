@@ -54,7 +54,7 @@ const About = () => {
                 <Text
                     color="#151D29"
                     textAlign="left"
-                    fontSize="2xl"
+                    fontSize="xl"
                     mb={16}
                     px={{ md: 28, base: 0 }}
                 >
@@ -69,7 +69,7 @@ const About = () => {
                     <Text
                         color="#151D29"
                         textAlign="left"
-                        fontSize="2xl"
+                        fontSize="xl"
                         px={{ md: 28, base: 0 }}
                     >
                         JOD hadir untuk menciptakan peluang baru dengan
@@ -107,7 +107,7 @@ const About = () => {
                         mx="auto"
                         mb={16}
                     />
-                    <Text color="#151D29" textAlign="left" fontSize="2xl">
+                    <Text color="#151D29" textAlign="left" fontSize="xl">
                         JOD menyediakan dua aplikasi unggulan yang memudahkan
                         pencari kerja dan penyedia kerja. Bagi pencari kerja,
                         aplikasi JOD memberikan akses mudah untuk menemukan
@@ -120,7 +120,7 @@ const About = () => {
                 <Text
                     color="#151D29"
                     textAlign="center"
-                    fontSize="2xl"
+                    fontSize="xl"
                     mt={4}
                     mb={4}
                 >
