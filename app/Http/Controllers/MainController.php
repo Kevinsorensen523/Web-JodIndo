@@ -8,6 +8,7 @@ use App\Models\Faq;
 use App\Models\Nilai;
 use App\Models\Pekerja;
 use App\Models\PemberiKerja;
+use App\Models\Privacy;
 use App\Models\Term;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -48,6 +49,15 @@ class MainController extends Controller
             'faqs' => $faqs,
             'pekerjas' => $pekerjas,
             'pemberi_kerjas' => $pemberi_kerja,
+        ]);
+    }
+
+    public function privacy()
+    {
+        $privacies = Privacy::all();
+
+        return Inertia::render('Privacy', [
+            'privacies' => $privacies,
         ]);
     }
 

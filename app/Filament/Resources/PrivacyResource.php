@@ -2,27 +2,24 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TermPointResource\Pages;
-use App\Filament\Resources\TermPointResource\RelationManagers;
-use App\Models\TermPoint;
+use App\Filament\Resources\PrivacyResource\Pages;
+use App\Filament\Resources\PrivacyResource\RelationManagers;
+use App\Models\Privacy;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class TermPointResource extends Resource
+class PrivacyResource extends Resource
 {
-    protected static ?string $model = TermPoint::class;
+    protected static ?string $model = Privacy::class;
 
-    protected static ?string $navigationIcon = 'zondicon-list';
+    protected static ?string $navigationLabel = 'Privacy';
 
-    protected static ?string $navigationLabel = 'Term Of Use List';
+    protected static ?string $navigationIcon = 'mdi-lock';
 
     protected static ?string $navigationGroup = 'Terms & Privacy';
 
@@ -30,25 +27,27 @@ class TermPointResource extends Resource
     {
         return $form
             ->schema([
-                Select::make('term_id')
-                    ->relationship('term', 'title')
+                Forms\Components\Textarea::make('content')
+                    ->label('Content')
                     ->required(),
-                    Textarea::make('content')->required()
-                ]);
-            }
+            ]);
+    }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('term.title')->label('Term'),
-                TextColumn::make('content')->limit(50),
+                Tables\Columns\TextColumn::make('content')
+                    ->label('Content')
+                    ->wrap()
+                    ->searchable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -67,9 +66,9 @@ class TermPointResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListTermPoints::route('/'),
-            'create' => Pages\CreateTermPoint::route('/create'),
-            'edit' => Pages\EditTermPoint::route('/{record}/edit'),
+            'index' => Pages\ListPrivacies::route('/'),
+            'create' => Pages\CreatePrivacy::route('/create'),
+            'edit' => Pages\EditPrivacy::route('/{record}/edit'),
         ];
     }
 }

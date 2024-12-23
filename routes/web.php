@@ -37,6 +37,7 @@ Route::get("/", [MainController::class, 'home'])->name('home');
 Route::get("/about", [MainController::class, 'about'])->name('about');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/faq', [MainController::class, 'faq'])->name('faq');
+Route::get('/privacy', [MainController::class, 'privacy'])->name('privacy');
 Route::get('/term', [MainController::class, 'term'])->name('term');
 
 // Fallback route

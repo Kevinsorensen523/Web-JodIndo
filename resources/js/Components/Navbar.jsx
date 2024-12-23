@@ -1,28 +1,22 @@
-import React, { useState } from "react";
+import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
     Box,
+    Button as ChakraButton,
+    Collapse,
     Flex,
+    IconButton,
     Image,
     Text,
-    Button as ChakraButton,
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    IconButton,
-    Collapse,
-    useDisclosure,
     useBreakpointValue,
+    useDisclosure,
 } from "@chakra-ui/react";
 import { Link } from "@inertiajs/react";
-import Button from "./Button";
-import { ChevronDownIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import JodLogo from "./../../../public/images/JodLogo.png";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
+import JodLogo from "./../../../public/images/JodLogo.png";
+import Button from "./Button";
 
 // Import images
-import IDFlag from "./../../../public/images/IDFlag.png";
-import ENFlag from "./../../../public/images/ENFlag.png";
 
 const MotionBox = motion(Box);
 const MotionText = motion(Text);
@@ -88,7 +82,7 @@ const Navbar = () => {
                     />
 
                     {/* Language Dropdown */}
-                    <Box
+                    {/* <Box
                         ml={10}
                         borderWidth="1px"
                         borderRadius="md"
@@ -147,7 +141,7 @@ const Navbar = () => {
                                 </MenuItem>
                             </MenuList>
                         </Menu>
-                    </Box>
+                    </Box> */}
                 </Flex>
 
                 {/* Hamburger Icon for Mobile */}

@@ -22,7 +22,7 @@ class PemberiKerjaResource extends Resource
 
     protected static ?string $navigationLabel = 'Card Pemberi Kerja';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'bi-card-list';
 
     protected static ?string $navigationGroup = 'Editable Cards';
 

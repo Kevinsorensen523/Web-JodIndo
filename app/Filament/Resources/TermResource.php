@@ -19,9 +19,9 @@ class TermResource extends Resource
 
     protected static ?string $navigationIcon = 'gmdi-privacy-tip-r';
 
-    protected static ?string $navigationLabel = 'Privacy Term Title';
+    protected static ?string $navigationLabel = 'Term Of Use Title';
 
-    protected static ?string $navigationGroup = 'Terms';
+    protected static ?string $navigationGroup = 'Terms & Privacy';
 
     public static function form(Form $form): Form
     {
