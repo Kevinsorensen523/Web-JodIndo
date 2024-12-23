@@ -20,7 +20,7 @@ const About = () => {
         {
             title: "Clarity",
             description:
-                "Jod memberikan informasi lengkap tentang pekerjaan (termasuk waktu, upah, dan alamat), tentang perusahaan, dan tentang karyawan. Hal ini membantu menghindari semua risiko dalam proses kerja sama antara karyawan dan perusahaan di platform Jod.",
+                "Jod memberikan informasi lengkap tentang pekerjaan (termasuk waktu, upah, dan alamat), tentang perusahaan dan tentang karyawan. Hal ini membantu menghindari semua risiko dalam proses kerja sama antara karyawan dan perusahaan di platform Jod.",
             imageUrl: Clarity,
         },
         {
