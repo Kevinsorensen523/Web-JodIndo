@@ -19,6 +19,8 @@ class TermsDescriptionResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $navigationGroup = 'Terms & Privacy';
+
     public static function form(Forms\Form $form): Forms\Form
     {
         return $form
